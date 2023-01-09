@@ -7,3 +7,7 @@ declare module '*.vue' {
 }
 
 declare module "element-plus/dist/locale/zh-cn.min.js"
+
+declare module "css-color-function" {
+  export function convert(color: string): string
+}

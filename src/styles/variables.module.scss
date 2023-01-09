@@ -1,3 +1,6 @@
+$settingPanelWidth:260px;
+$theme: #1678ff;
+
 // base color
 $blue: #324157;
 $light-blue: #3a71a8;
@@ -10,7 +13,7 @@ $panGreen: #30b08f;
 
 // sidebar
 $menuText: #bfcbd9;
-$menuActiveText: #409eff;
+$menuActiveText: #1678ff;
 $subMenuActiveText: #f4f4f5;
 $menuBg: #304156;
 $menuHover: #263445;
@@ -20,6 +23,8 @@ $sideBarWidth: 210px;
 
 // 导出变量提供给js来使用
 :export {
+  settingPanelWidth: $settingPanelWidth;
+  theme: $theme;
   menuText: $menuText;
   menuActiveText: $menuActiveText;
   subMenuActiveText: $subMenuActiveText;

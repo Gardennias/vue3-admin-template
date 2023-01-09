@@ -8,6 +8,10 @@
           :to="{ path: tag.path, query: tag.query }"
           class="tags-view-item"
           :class="{ active: isActive(tag) }"
+          :style="{
+            backgroundColor: isActive(tag) ? themeColor : '',
+            borderColor: isActive(tag) ? themeColor : ''
+          }"
         >
           <el-dropdown
             trigger="contextmenu"
@@ -54,6 +58,11 @@ import { CloseBold } from "@element-plus/icons-vue"
 import { routes } from "@/router"
 import path from "path-browserify"
 import { onMounted } from "vue"
+import { useSettingsStore } from "@/stores/setting"
+
+// 获取主题色
+const settingStore = useSettingsStore()
+const themeColor = computed(() => settingStore.settings.theme)
 
 const store = useTagsView()
 const { visitedViews } = storeToRefs(store)
