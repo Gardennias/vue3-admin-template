@@ -1,0 +1,1 @@
+import{_ as s,o as n,j as o,f as _}from"./index.98d405df.js";const e={};function t(a,r){const c=_;return n(),o(c,{"icon-class":"404","class-name":"custom-class"})}const l=s(e,[["render",t]]);export{l as default};
