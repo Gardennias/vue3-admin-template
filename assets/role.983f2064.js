@@ -1,1 +1,0 @@
-import{_ as e,o as c,c as o}from"./index.98d405df.js";const r={};function n(t,s){return c(),o("div",null,"role")}const a=e(r,[["render",n]]);export{a as default};
