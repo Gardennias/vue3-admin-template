@@ -10,15 +10,19 @@
       </div>
       <app-main></app-main>
     </div>
-    <right-panel v-model="showSetting" title="样式风格设置" :size="settingsPanelWidth">
-      <settings/>
+    <right-panel
+      v-model="showSetting"
+      title="样式风格设置"
+      :size="settingsPanelWidth"
+    >
+      <settings />
     </right-panel>
   </div>
 </template>
 
 <script lang="ts" setup>
 import varibles from "@/styles/variables.module.scss"
-import { useSettingsStore } from "@/stores/setting";
+import { useSettingsStore } from "@/stores/setting"
 
 const settingsStore = useSettingsStore()
 const showTagsView = computed(() => settingsStore.settings.tagsView)
@@ -28,7 +32,7 @@ const openSetting = () => {
   showSetting.value = true
 }
 
-const otherHeight = computed(() => (showSetting.value?84 : '') + 'px')
+const otherHeight = computed(() => (showSetting.value ? 84 : "") + "px")
 
 const settingsPanelWidth = computed(() => varibles.settingPanelWidth)
 </script>
@@ -56,6 +60,5 @@ const settingsPanelWidth = computed(() => varibles.settingPanelWidth)
       background: #fff;
     }
   }
-
 }
 </style>

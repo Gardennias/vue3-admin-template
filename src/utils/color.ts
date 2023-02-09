@@ -8,7 +8,7 @@ const formula: { [prop: string]: string } = {
   "primaty-light-6": "color(primary tint(60%))",
   "primaty-light-7": "color(primary tint(70%))",
   "primaty-light-8": "color(primary tint(80%))",
-  "primaty-light-9": "color(primary tint(90%))",
+  "primaty-light-9": "color(primary tint(90%))"
 }
 
 const generateColors = (primary: string) => {

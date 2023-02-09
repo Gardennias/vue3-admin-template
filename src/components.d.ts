@@ -10,7 +10,6 @@ declare module '@vue/runtime-core' {
     AppMain: typeof import('./layout/components/AppMain.vue')['default']
     Avatar: typeof import('./components/Avatar/index.vue')['default']
     Breadcrumb: typeof import('./layout/components/Breadcrumb/index.vue')['default']
-    copy: typeof import('./layout/components/Sidebar/SidebarItem copy.vue')['default']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElButton: typeof import('element-plus/es')['ElButton']
@@ -45,7 +44,6 @@ declare module '@vue/runtime-core' {
     SizeSelect: typeof import('./components/SizeSelect/index.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
     TagsView: typeof import('./layout/components/TagsView/index.vue')['default']
-    TagView: typeof import('./components/TagView/index.vue')['default']
     ThemePicker: typeof import('./components/ThemePicker/index.vue')['default']
   }
 }

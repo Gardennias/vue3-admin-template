@@ -5,16 +5,14 @@
 </template>
 
 <script setup lang="ts">
-import { zhCn } from "element-plus/dist/locale/zh-cn.min.js"
 import { storeToRefs } from "pinia"
 import { useAppStore } from "./stores/app"
+import { zhCn } from "element-plus/dist/locale/zh-cn.min.js"
 import { useGenerateTheme } from "@/hook/useGenerateTheme"
 
 const store = useAppStore()
-const { size } = storeToRefs(store)
-
 useGenerateTheme()
+let size = ref()
+let obj = storeToRefs(store)
+size = obj.size
 </script>
-
-<style>
-</style>

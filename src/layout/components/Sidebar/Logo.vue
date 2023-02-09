@@ -1,12 +1,27 @@
 <template>
-  <div class="sidebar-logo-container" :class="{ collapse: collapse}">
+  <div class="sidebar-logo-container" :class="{ collapse: collapse }">
     <transition name="sidebarLogoFade">
-      <router-link to="/" v-if="collapse" key="collapse" class="sidebar-logo-link">
-        <img v-if="logo" :src="logo" class="sidebar-logo" alt="VueElementAdmin"/>
+      <router-link
+        to="/"
+        v-if="collapse"
+        key="collapse"
+        class="sidebar-logo-link"
+      >
+        <img
+          v-if="logo"
+          :src="logo"
+          class="sidebar-logo"
+          alt="VueElementAdmin"
+        />
         <h1 v-else class="sidebar-title">{{ title }}</h1>
       </router-link>
       <router-link v-else key="expand" to="/" class="sidebar-logo-link">
-        <img v-if="logo" :src="logo" class="sidebar-logo" alt="VueElementAdmin"/>
+        <img
+          v-if="logo"
+          :src="logo"
+          class="sidebar-logo"
+          alt="VueElementAdmin"
+        />
         <h1 v-else class="sidebar-title">{{ title }}</h1>
       </router-link>
     </transition>
@@ -56,10 +71,10 @@ const title = "Vue Element Admin"
       font-weight: 600;
       line-height: 50px;
       font-size: 14px;
-      font-family:  Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+      font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
       vertical-align: middle;
     }
-  }  
+  }
 }
 .sidebarLogoFade-enter-active {
   transition: opacity 1.5s;

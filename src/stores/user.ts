@@ -1,6 +1,6 @@
 import { defineStore } from "pinia"
 import { login as loginApi } from "@/api/config/user"
-import { setToken } from "@/utils/auth"
+import { removeToken, setToken } from "@/utils/auth"
 
 export interface IUserInfo {
   username: string
@@ -14,7 +14,7 @@ export const useUserStore = defineStore("user", () => {
   const login = async (userInfo: IUserInfo) => {
     try {
       const { username, password } = userInfo
-      const response = await loginApi({username: username.trim(), password})
+      const response = await loginApi({ username: username.trim(), password })
       const { data } = response
       state.token = data.token
       setToken(data.token)
@@ -22,5 +22,9 @@ export const useUserStore = defineStore("user", () => {
       return Promise.reject(e)
     }
   }
-  return { state, login }
+  const resetToken = () => {
+    state.token = ""
+    removeToken()
+  }
+  return { state, login, resetToken }
 })

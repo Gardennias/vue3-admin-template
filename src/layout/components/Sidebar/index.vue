@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar-wrapper">
-    <logo v-if="showLogo" :collapse="isCollapse"/>
+    <logo v-if="showLogo" :collapse="isCollapse" />
     <scroll-panel>
       <el-menu
         mode="vertical"
@@ -28,14 +28,14 @@ import scssVariables from "@/styles/variables.module.scss"
 import { routes } from "@/router"
 import { useAppStore } from "@/stores/app"
 import { storeToRefs } from "pinia"
-import { useSettingsStore } from "@/stores/setting";
+import { useSettingsStore } from "@/stores/setting"
 
 // 是否显示logo
 const showLogo = computed(() => settingStore.settings.sidebarLogo)
 // 展开收起状态 稍后放store 当前是展开就让它收起
 const isCollapse = computed(() => store.sidebar.opened)
 
-const logoHeight = computed(() => (showLogo.value ? 50 : 0) + 'px')
+const logoHeight = computed(() => (showLogo.value ? 50 : 0) + "px")
 
 // 获取主题色
 const settingStore = useSettingsStore()

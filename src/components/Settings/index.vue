@@ -2,7 +2,7 @@
   <div class="drawer-container">
     <div class="drawer-item">
       <span>主题色</span>
-      <theme-picker/>
+      <theme-picker />
     </div>
     <div class="drawer-container">
       <span>Open Tag-View</span>
@@ -16,14 +16,14 @@
 </template>
 
 <script setup lang="ts">
-import { useSettingsStore } from '@/stores/setting';
+import { useSettingsStore } from "@/stores/setting"
 
 const settingsStore = useSettingsStore()
 const tagsView = computed({
   get() {
     return settingsStore.settings.tagsView
   },
-  set(val){
+  set(val) {
     settingsStore.changeSetting({
       key: "tagsView",
       value: val

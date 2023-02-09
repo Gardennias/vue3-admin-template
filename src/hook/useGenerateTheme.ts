@@ -1,4 +1,4 @@
-import { useSettingsStore } from "@/stores/setting";
+import { useSettingsStore } from "@/stores/setting"
 import { generateColors, setColors } from "@/utils/color"
 
 export const useGenerateTheme = () => {
@@ -9,7 +9,7 @@ export const useGenerateTheme = () => {
   const generateTheme = (primary: string) => {
     const colors = Object.assign(
       // 根据当前主题生成
-      { primary: theme.value},
+      { primary: theme.value },
       generateColors(primary)
     )
     setColors(colors)

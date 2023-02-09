@@ -10,7 +10,8 @@ import DefineOptions from "unplugin-vue-define-options/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vue3-admin-template/',
+  base: process.env.NODE_ENV === 'production' ? '/vue3-admin-template/' : '/', // 服务器二级目录 写法
+  // base: process.env.NODE_ENV === 'production' ? './' : '/', // 服务器一级目录 写法
   server: { // 后台接口服务器配置
     proxy: {
       "/dev-api": {

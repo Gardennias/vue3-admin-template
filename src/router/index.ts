@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router"
 import Layout from "@/layout/index.vue"
 
 // 看做是异步路由
@@ -140,6 +140,6 @@ const constantRoutes: Array<RouteRecordRaw> = [
 export const routes = [...constantRoutes, ...asyncRoutes]
 
 export default createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(), // 发布到服务器 使用hash模式
   routes
 })

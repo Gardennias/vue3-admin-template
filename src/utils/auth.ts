@@ -1,4 +1,4 @@
-const tokenKey = "V3-Admin-Token";
+const tokenKey = "V3-Admin-Token"
 
 export const getToken = (): string | null => {
   return localStorage.getItem(tokenKey)

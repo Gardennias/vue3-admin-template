@@ -1,11 +1,16 @@
 <template>
-  <el-color-picker v-model="theme" class="theme-picker" :predefine="themeColor" popper-class="theme-picker-dropdown"></el-color-picker>
+  <el-color-picker
+    v-model="theme"
+    class="theme-picker"
+    :predefine="themeColor"
+    popper-class="theme-picker-dropdown"
+  ></el-color-picker>
 </template>
 
 <script lang="ts" setup>
-import { useSettingsStore } from '@/stores/setting';
+import { useSettingsStore } from "@/stores/setting"
 
-const store = useSettingsStore();
+const store = useSettingsStore()
 const themeColor = [
   "#1678ff",
   "#1890ff",
@@ -17,12 +22,13 @@ const themeColor = [
   "#f5222d"
 ]
 // store中获取默认主题色
-const defaultTheme = computed(() => store.settings.theme);
+const defaultTheme = computed(() => store.settings.theme)
 const theme = ref("")
 
 // 监听默认样式
-watch(defaultTheme, 
-  (value) =>{
+watch(
+  defaultTheme,
+  (value) => {
     theme.value = value
   },
   {
@@ -33,7 +39,7 @@ watch(defaultTheme,
 // 根据theme选择变化 重新生成主题
 watch(theme, (value) => {
   // 同步store
-  store.changeSetting({key: "theme", value});
+  store.changeSetting({ key: "theme", value })
   // generateTheme(value)
 })
 </script>
@@ -50,7 +56,7 @@ watch(theme, (value) => {
 }
 .theme-message,
 .theme-picker-dropdown {
-  -index: 99999 !important;
+  z-index: 99999 !important;
 }
 .theme-picker-dropdown .el-color-dropdown__link-btn {
   display: none;
